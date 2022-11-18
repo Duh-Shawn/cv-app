@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+}
+
+section {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+    }
+  }
+
+  .info{
+    display: flex;
+
+    .info-data{
+      flex: 1
+    }
+
+    .info-buttons{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+}

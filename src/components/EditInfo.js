@@ -8,48 +8,43 @@ class EditInfo extends Component {
     const { handleInputChange } = this.props;
 
     return (
-      <form id="person-info-form">
-        <label>
-          First Name:
-          <input
-            type="text"
-            id="first"
-            name="first"
-            value={first}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            id="last"
-            name="last"
-            value={last}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Phone:
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-            value={phone}
-            onChange={handleInputChange}
-          />
-        </label>
+      <form id="info-form">
+        <input
+          type="text"
+          id="first"
+          name="first"
+          placeholder="First Name"
+          value={first}
+          onChange={handleInputChange}
+        />
+
+        <input
+          type="text"
+          id="last"
+          name="last"
+          placeholder="Last Name"
+          value={last}
+          onChange={handleInputChange}
+        />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email@email.com"
+          value={email}
+          onChange={handleInputChange}
+        />
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone 000-000-0000"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          value={phone}
+          onChange={handleInputChange}
+        />
       </form>
     );
   }

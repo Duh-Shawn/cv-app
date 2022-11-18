@@ -6,7 +6,12 @@ class App extends Component {
     return (
       <div className="app">
         <h1>CV React App</h1>
-        <Info />
+        <section id="personal-info">
+          <h3> Personal Info</h3>
+          <Info />
+        </section>
+        {/* <section id="education-experience">1</section>
+        <section id="work-experience">2</section> */}
       </div>
     );
   }

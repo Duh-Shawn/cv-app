@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import EditInfo from "./EditInfo";
+import ViewInfo from "./ViewInfo";
+import "../styles/info.scss";
 
 class Info extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ class Info extends Component {
         />
       );
     }
-    return null;
+    return <ViewInfo info={{ first, last, email, phone }} />;
   }
 }
 
