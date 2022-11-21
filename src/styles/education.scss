@@ -1,0 +1,29 @@
+#education-experience {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    input {
+    }
+  }
+
+  .education-container {
+    .education-block {
+      display: flex;
+
+      .education-data {
+        flex: 1;
+      }
+
+      .view-education-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+
+    button {
+    }
+  }
+}

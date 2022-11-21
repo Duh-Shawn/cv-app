@@ -5,27 +5,25 @@
   border: 1px solid black;
 }
 
-section {
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
-    input {
-    }
+  input {
+  }
+}
+
+.info {
+  display: flex;
+
+  .info-data {
+    flex: 1;
   }
 
-  .info{
+  .info-buttons {
     display: flex;
-
-    .info-data{
-      flex: 1
-    }
-
-    .info-buttons{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
+    flex-direction: column;
+    justify-content: space-around;
   }
 }

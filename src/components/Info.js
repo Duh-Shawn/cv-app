@@ -11,7 +11,7 @@ class Info extends Component {
       last: "",
       email: "",
       phone: "",
-      editMode: true,
+      editMode: false,
     };
   }
 
