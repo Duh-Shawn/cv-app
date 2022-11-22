@@ -1,15 +1,18 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "../styles/experience.scss";
 
 class Experience extends Component {
   constructor(props) {
     super(props);
+    const { id, company, title, date, description, editMode } = this.props;
     this.state = {
-      company: "",
-      title: "",
-      date: "",
-      description: "",
-      editMode: false,
+      id,
+      company,
+      title,
+      date,
+      description,
+      editMode,
     };
   }
 
@@ -32,11 +35,15 @@ class Experience extends Component {
   };
 
   render() {
-    const { company, title, date, description } = this.state;
-    const { editMode } = this.state;
+    const { id, company, title, date, description, editMode } = this.state;
+    const { handleDeletion } = this.props;
     if (editMode) {
       return (
-        <form className="experience-form">
+        <form
+          className="experience-form"
+          data-id={id}
+          onSubmit={this.handleEdit}
+        >
           <input
             type="text"
             name="company"
@@ -69,14 +76,17 @@ class Experience extends Component {
             value={description}
             onChange={this.handleInputChange}
           />
-          <button type="submit" onClick={this.handleEdit}>
-            Submit
-          </button>
+          <div className="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="button" onClick={handleDeletion}>
+              Delete
+            </button>
+          </div>
         </form>
       );
     }
     return (
-      <div className="experience-block">
+      <div className="experience-block" data-id={id}>
         <div className="experience-data">
           <p>Company: {company}</p>
           <p>Title: {title}</p>
@@ -87,11 +97,23 @@ class Experience extends Component {
           <button type="button" onClick={this.handleEdit}>
             edit
           </button>
-          <button type="button">delete</button>
+          <button type="button" onClick={handleDeletion}>
+            delete
+          </button>
         </div>
       </div>
     );
   }
 }
+
+Experience.propTypes = {
+  handleDeletion: PropTypes.func.isRequired,
+  company: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  editMode: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Experience;
