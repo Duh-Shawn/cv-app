@@ -1,0 +1,15 @@
+.experience-container{
+    .experience-block{
+        display: flex;
+
+        .experience-data{
+            flex: 1;
+        }
+
+        .view-experience-buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}
