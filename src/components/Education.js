@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "../styles/education.scss";
 
 class Education extends Component {
   constructor(props) {
     super(props);
+    const { school, degree, graduation, editMode, id } = this.props;
     this.state = {
-      school: "",
-      degree: "",
-      graduation: "",
-      editMode: true,
+      school,
+      degree,
+      graduation,
+      editMode,
+      id,
     };
   }
 
@@ -22,7 +25,8 @@ class Education extends Component {
     });
   };
 
-  handleEdit = () => {
+  handleEdit = (event) => {
+    event.preventDefault();
     const { editMode } = this.state;
     this.setState({
       editMode: !editMode,
@@ -31,57 +35,61 @@ class Education extends Component {
 
   render() {
     const { editMode } = this.state;
-    const { school, degree, graduation } = this.state;
+    const { school, degree, graduation, id } = this.state;
+    const { handleDeletion } = this.props;
 
     if (editMode) {
       return (
-        <div className="education-form-block">
-          <form className="education-form" onSubmit={this.handleEdit}>
-            <input
-              type="text"
-              name="school"
-              id="school"
-              placeholder="School Name"
-              value={school}
-              onChange={this.handleInputChange}
-            />
-            <input
-              type="text"
-              name="degree"
-              id="degree"
-              placeholder="Degree"
-              value={degree}
-              onChange={this.handleInputChange}
-            />
-            <input
-              type="text"
-              name="graduation"
-              id="graduation"
-              placeholder="Graduation Year"
-              value={graduation}
-              onChange={this.handleInputChange}
-            />
+        <form
+          className="education-form"
+          data-id={id}
+          onSubmit={this.handleEdit}
+        >
+          <input
+            type="text"
+            name="school"
+            id="school"
+            placeholder="School Name"
+            value={school}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            name="degree"
+            id="degree"
+            placeholder="Degree"
+            value={degree}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="number"
+            name="graduation"
+            id="graduation"
+            placeholder="Graduation Year"
+            value={graduation}
+            onChange={this.handleInputChange}
+          />
+          <div className="form-buttons">
             <button type="submit">Submit</button>
-          </form>
-        </div>
+            <button type="button" onClick={handleDeletion}>
+              Delete
+            </button>
+          </div>
+        </form>
       );
     }
     return (
-      <div className="education-block">
+      <div className="education-block" data-id={id}>
         <div className="education-data">
           <p>School: {school}</p>
           <p>Degree: {degree}</p>
           <p>Graduation Year: {graduation}</p>
         </div>
         <div className="view-education-buttons">
-          <button
-            type="button"
-            id="edit-education-button"
-            onClick={this.handleEdit}
-          >
+          <button type="button" onClick={this.handleEdit}>
             edit
           </button>
-          <button type="button" id="delete-education-button">
+          <button type="button" onClick={handleDeletion}>
             delete
           </button>
         </div>
@@ -89,5 +97,13 @@ class Education extends Component {
     );
   }
 }
+Education.propTypes = {
+  handleDeletion: PropTypes.func.isRequired,
+  school: PropTypes.string.isRequired,
+  degree: PropTypes.string.isRequired,
+  graduation: PropTypes.string.isRequired,
+  editMode: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Education;
