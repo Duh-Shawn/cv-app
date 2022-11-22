@@ -9,7 +9,7 @@ class Info extends Component {
       last: "",
       email: "",
       phone: "",
-      editMode: false,
+      editMode: true,
     };
   }
 
@@ -23,13 +23,20 @@ class Info extends Component {
     });
   };
 
+  handleEdit = () => {
+    const { editMode } = this.state;
+    this.setState({
+      editMode: !editMode,
+    });
+  };
+
   render() {
     const { editMode } = this.state;
     const { first, last, email, phone } = this.state;
 
     if (editMode) {
       return (
-        <form id="info-form">
+        <form id="info-form" onSubmit={this.handleEdit}>
           <input
             type="text"
             id="first"
@@ -62,7 +69,7 @@ class Info extends Component {
             id="phone"
             name="phone"
             placeholder="Phone 000-000-0000"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
             value={phone}
             onChange={this.handleInputChange}
           />
@@ -80,11 +87,8 @@ class Info extends Component {
           <p>Phone: {phone}</p>
         </div>
         <div className="info-buttons">
-          <button type="button" id="edit-info-button">
+          <button type="button" id="edit-info-button" onClick={this.handleEdit}>
             edit
-          </button>
-          <button type="button" id="delete-info-button">
-            delete
           </button>
         </div>
       </div>
