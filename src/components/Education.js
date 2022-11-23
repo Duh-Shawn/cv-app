@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "../styles/education.scss";
+import { MdMode, MdDelete, MdCheck } from "react-icons/md";
 
 class Education extends Component {
   constructor(props) {
@@ -70,9 +71,15 @@ class Education extends Component {
             onChange={this.handleInputChange}
           />
           <div className="form-buttons">
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleDeletion}>
-              Delete
+            <button type="submit" className="edit-button">
+              <MdCheck size={20} />
+            </button>
+            <button
+              type="button"
+              className="edit-button"
+              onClick={handleDeletion}
+            >
+              <MdDelete size={20} />
             </button>
           </div>
         </form>
@@ -85,12 +92,20 @@ class Education extends Component {
           <p>Degree: {degree}</p>
           <p>Graduation Year: {graduation}</p>
         </div>
-        <div className="view-education-buttons">
-          <button type="button" onClick={this.handleEdit}>
-            edit
+        <div className="block-buttons">
+          <button
+            type="button"
+            className="edit-button"
+            onClick={this.handleEdit}
+          >
+            <MdMode size={25} />
           </button>
-          <button type="button" onClick={handleDeletion}>
-            delete
+          <button
+            type="button"
+            className="edit-button"
+            onClick={handleDeletion}
+          >
+            <MdDelete size={25} />
           </button>
         </div>
       </div>

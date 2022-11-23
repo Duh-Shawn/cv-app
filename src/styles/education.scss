@@ -1,25 +1,38 @@
+@import "./mixins.scss";
+
 #education-experience {
-  form {
+  .education-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
 
-    input {
-    }
-  }
-
-  .education-container {
     .education-block {
-      display: flex;
+      @include block-styling;
 
       .education-data {
-        flex: 1;
+        @include data-list-spacing;
       }
 
-      .view-education-buttons {
+      .block-buttons {
+        @include block-edit-delete-buttons;
+      }
+    }
+
+    .education-form {
+      @include form-styling;
+
+      .form-buttons {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      input {
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
       }
     }
 

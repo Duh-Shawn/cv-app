@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "../styles/experience.scss";
+import { MdMode, MdDelete, MdCheck } from "react-icons/md";
 
 class Experience extends Component {
   constructor(props) {
@@ -77,9 +78,15 @@ class Experience extends Component {
             onChange={this.handleInputChange}
           />
           <div className="form-buttons">
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleDeletion}>
-              Delete
+            <button type="submit" className="edit-button">
+              <MdCheck size={20} />
+            </button>
+            <button
+              type="button"
+              className="edit-button"
+              onClick={handleDeletion}
+            >
+              <MdDelete size={20} />
             </button>
           </div>
         </form>
@@ -93,12 +100,20 @@ class Experience extends Component {
           <p>Date: {date}</p>
           <p>Description: {description}</p>
         </div>
-        <div className="view-experience-buttons">
-          <button type="button" onClick={this.handleEdit}>
-            edit
+        <div className="block-buttons">
+          <button
+            type="button"
+            className="edit-button"
+            onClick={this.handleEdit}
+          >
+            <MdMode size={25} />
           </button>
-          <button type="button" onClick={handleDeletion}>
-            delete
+          <button
+            type="button"
+            className="edit-button"
+            onClick={handleDeletion}
+          >
+            <MdDelete size={25} />
           </button>
         </div>
       </div>

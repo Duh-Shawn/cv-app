@@ -1,15 +1,40 @@
-.experience-container{
-    .experience-block{
-        display: flex;
+@import "./mixins.scss";
 
-        .experience-data{
-            flex: 1;
-        }
+#work-experience {
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 
-        .view-experience-buttons{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
+    .experience-block {
+      @include block-styling;
+
+      .experience-data {
+        @include data-list-spacing;
+      }
+
+      .block-buttons {
+        @include block-edit-delete-buttons;
+      }
     }
+
+    .experience-form {
+      @include form-styling;
+
+      .form-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  }
 }

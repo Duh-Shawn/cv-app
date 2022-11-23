@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/info.scss";
+// import { VscEdit } from "react-icons/vsc";
+import { MdMode } from "react-icons/md";
 
 class Info extends Component {
   constructor(props) {
@@ -9,7 +11,7 @@ class Info extends Component {
       last: "",
       email: "",
       phone: "",
-      editMode: true,
+      editMode: false,
     };
   }
 
@@ -79,7 +81,7 @@ class Info extends Component {
       );
     }
     return (
-      <div className="info">
+      <div className="info-container">
         <div className="info-data">
           <p>First Name: {first}</p>
           <p>Last Name: {last}</p>
@@ -87,8 +89,12 @@ class Info extends Component {
           <p>Phone: {phone}</p>
         </div>
         <div className="info-buttons">
-          <button type="button" id="edit-info-button" onClick={this.handleEdit}>
-            edit
+          <button
+            type="button"
+            className="edit-button"
+            onClick={this.handleEdit}
+          >
+            <MdMode size={25} />
           </button>
         </div>
       </div>

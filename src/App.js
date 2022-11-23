@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { GrAdd } from "react-icons/gr";
 import uniqid from "uniqid";
 import Info from "./components/Info";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import "./styles/app.scss";
 
 class App extends Component {
   constructor(props) {
@@ -76,7 +78,7 @@ class App extends Component {
     const { educationList, experienceList } = this.state;
     return (
       <div className="app">
-        <h1>CV React App</h1>
+        <h1>CV Creator</h1>
         <section id="personal-info">
           <h3>Personal Info</h3>
           <Info />
@@ -95,8 +97,12 @@ class App extends Component {
                 handleDeletion={this.handleDeletion}
               />
             ))}
-            <button type="button" onClick={this.handleAdd}>
-              Add
+            <button
+              type="button"
+              className="add-button"
+              onClick={this.handleAdd}
+            >
+              <GrAdd size={25} />
             </button>
           </div>
         </section>
@@ -115,8 +121,12 @@ class App extends Component {
                 handleDeletion={this.handleDeletion}
               />
             ))}
-            <button type="button" onClick={this.handleAdd}>
-              Add
+            <button
+              type="button"
+              className="add-button"
+              onClick={this.handleAdd}
+            >
+              <GrAdd size={25} />
             </button>
           </div>
         </section>

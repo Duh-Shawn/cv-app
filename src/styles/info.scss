@@ -1,29 +1,18 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 1px solid black;
-}
+@import "./mixins.scss";
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+#personal-info {
+  .info-container {
+    @include block-styling;
 
-  input {
-  }
-}
+    .info-data {
+      @include data-list-spacing;
+    }
 
-.info {
-  display: flex;
-
-  .info-data {
-    flex: 1;
-  }
-
-  .info-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    .info-buttons {
+      flex: 0.25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
