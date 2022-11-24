@@ -1,13 +1,14 @@
 @mixin data-list-spacing {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
 }
 
 @mixin block-styling {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #ccc;
+  background-color: white;
   border-radius: 4px;
 }
 
@@ -20,7 +21,22 @@
 }
 
 @mixin form-styling {
-  border: 1px solid black;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   border-radius: 4px;
+}
+
+@mixin form-input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@mixin form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }

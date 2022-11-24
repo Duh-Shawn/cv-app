@@ -9,10 +9,18 @@
     }
 
     .info-buttons {
-      flex: 0.25;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include block-edit-delete-buttons
+    }
+  }
+  form {
+    @include form-styling;
+
+    input {
+      @include form-input;
+    }
+
+    button {
+      margin: auto;
     }
   }
 }

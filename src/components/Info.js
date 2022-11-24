@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/info.scss";
-// import { VscEdit } from "react-icons/vsc";
-import { MdMode } from "react-icons/md";
+import { MdMode, MdCheck } from "react-icons/md";
 
 class Info extends Component {
   constructor(props) {
@@ -76,7 +75,9 @@ class Info extends Component {
             onChange={this.handleInputChange}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit" className="edit-button">
+            <MdCheck size={25} />
+          </button>
         </form>
       );
     }

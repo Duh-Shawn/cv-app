@@ -22,21 +22,12 @@
       @include form-styling;
 
       .form-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
+        @include form-buttons;
       }
 
       input {
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        @include form-input;
       }
-    }
-
-    button {
     }
   }
 }
