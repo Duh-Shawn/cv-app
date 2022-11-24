@@ -81,11 +81,14 @@ class App extends Component {
         <h1>CV Creator</h1>
         <section id="personal-info">
           <h3>Personal Info</h3>
-          <Info />
+          <div className="info-container">
+            <Info />
+          </div>
         </section>
+
         <section id="education-experience">
           <h3>Education</h3>
-          <div className="education-container">
+          <div className="education-container container">
             {educationList.map((item) => (
               <Education
                 key={item.id}
@@ -106,9 +109,10 @@ class App extends Component {
             </button>
           </div>
         </section>
+
         <section id="work-experience">
           <h3>Experience</h3>
-          <div className="experience-container">
+          <div className="experience-container container">
             {experienceList.map((item) => (
               <Experience
                 key={item.id}

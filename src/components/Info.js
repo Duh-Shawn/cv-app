@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../styles/info.scss";
 import { MdMode, MdCheck } from "react-icons/md";
 
 class Info extends Component {
@@ -74,22 +73,23 @@ class Info extends Component {
             value={phone}
             onChange={this.handleInputChange}
           />
-
-          <button type="submit" className="edit-button">
-            <MdCheck size={25} />
-          </button>
+          <div className="form-buttons">
+            <button type="submit" className="edit-button">
+              <MdCheck size={25} />
+            </button>
+          </div>
         </form>
       );
     }
     return (
-      <div className="info-container">
-        <div className="info-data">
+      <div className="info-block block">
+        <div className="block-data">
           <p>First Name: {first}</p>
           <p>Last Name: {last}</p>
           <p>Email: {email}</p>
           <p>Phone: {phone}</p>
         </div>
-        <div className="info-buttons">
+        <div className="block-buttons">
           <button
             type="button"
             className="edit-button"

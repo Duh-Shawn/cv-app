@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../styles/experience.scss";
 import { MdMode, MdDelete, MdCheck } from "react-icons/md";
 
 class Experience extends Component {
@@ -93,8 +92,8 @@ class Experience extends Component {
       );
     }
     return (
-      <div className="experience-block" data-id={id}>
-        <div className="experience-data">
+      <div className="experience-block block" data-id={id}>
+        <div className="block-data">
           <p>Company: {company}</p>
           <p>Title: {title}</p>
           <p>Date: {date}</p>

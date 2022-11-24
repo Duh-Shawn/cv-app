@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../styles/education.scss";
 import { MdMode, MdDelete, MdCheck } from "react-icons/md";
 
 class Education extends Component {
@@ -86,8 +85,8 @@ class Education extends Component {
       );
     }
     return (
-      <div className="education-block" data-id={id}>
-        <div className="education-data">
+      <div className="education-block block" data-id={id}>
+        <div className="block-data">
           <p>School: {school}</p>
           <p>Degree: {degree}</p>
           <p>Graduation Year: {graduation}</p>
