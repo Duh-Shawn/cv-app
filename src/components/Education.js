@@ -71,14 +71,14 @@ class Education extends Component {
           />
           <div className="form-buttons">
             <button type="submit" className="edit-button">
-              <MdCheck size={20} />
+              <MdCheck size={25} />
             </button>
             <button
               type="button"
               className="edit-button"
               onClick={handleDeletion}
             >
-              <MdDelete size={20} />
+              <MdDelete size={25} />
             </button>
           </div>
         </form>
